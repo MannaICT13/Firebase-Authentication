@@ -17,6 +17,7 @@
 		2AA6F7822435D86900C75361 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6F7812435D86900C75361 /* LoginViewController.swift */; };
 		2AA6F7842435D87700C75361 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6F7832435D87700C75361 /* SignUpViewController.swift */; };
 		2AA6F7862435D88900C75361 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6F7852435D88900C75361 /* HomeViewController.swift */; };
+		2AA6F7892435DF3500C75361 /* DbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6F7882435DF3500C75361 /* DbHelper.swift */; };
 		DFBF80A3AECA77353A8D15EF /* Pods_Firebase_Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5807FF2E486330A741114C55 /* Pods_Firebase_Authentication.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		2AA6F7812435D86900C75361 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2AA6F7832435D87700C75361 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2AA6F7852435D88900C75361 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2AA6F7882435DF3500C75361 /* DbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbHelper.swift; sourceTree = "<group>"; };
 		39DA661904BE8D0DE601798A /* Pods-Firebase Authentication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Authentication.release.xcconfig"; path = "Target Support Files/Pods-Firebase Authentication/Pods-Firebase Authentication.release.xcconfig"; sourceTree = "<group>"; };
 		5807FF2E486330A741114C55 /* Pods_Firebase_Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD6172585B39972306F8608 /* Pods-Firebase Authentication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Authentication.debug.xcconfig"; path = "Target Support Files/Pods-Firebase Authentication/Pods-Firebase Authentication.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		2AA6F7692435D4A900C75361 /* Firebase Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				2AA6F7872435DEDF00C75361 /* Model */,
 				2AA6F7802435D82E00C75361 /* Controller */,
 				2AA6F76A2435D4A900C75361 /* AppDelegate.swift */,
 				2AA6F76C2435D4A900C75361 /* SceneDelegate.swift */,
@@ -92,6 +95,14 @@
 				2AA6F7852435D88900C75361 /* HomeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2AA6F7872435DEDF00C75361 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2AA6F7882435DF3500C75361 /* DbHelper.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		575D4534967FD2F0E1A751C1 /* Pods */ = {
@@ -231,6 +242,7 @@
 				2AA6F76F2435D4A900C75361 /* ViewController.swift in Sources */,
 				2AA6F76B2435D4A900C75361 /* AppDelegate.swift in Sources */,
 				2AA6F76D2435D4A900C75361 /* SceneDelegate.swift in Sources */,
+				2AA6F7892435DF3500C75361 /* DbHelper.swift in Sources */,
 				2AA6F7842435D87700C75361 /* SignUpViewController.swift in Sources */,
 				2AA6F7862435D88900C75361 /* HomeViewController.swift in Sources */,
 			);

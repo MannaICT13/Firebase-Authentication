@@ -22,9 +22,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func signInBtnAction(_ sender: Any) {
+        
+        let logInVC = storyboard?.instantiateViewController(identifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(logInVC, animated: true)
+        
+        
     }
     
     @IBAction func signUpBtnAction(_ sender: Any) {
+        
+        let signUpVC = storyboard?.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        
+        self.navigationController?.pushViewController(signUpVC, animated: true)
+        
     }
 }
+
 
