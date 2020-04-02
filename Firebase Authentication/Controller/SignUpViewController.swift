@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.fillButtonStyle(button: signUpBtnOutlet)
 
        
     }

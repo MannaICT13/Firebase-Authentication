@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.fillButtonStyle(button: signInBtOutlet)
+        Utilities.borderButtonStyle(button: signUpBtnOutlet)
       
     }
 

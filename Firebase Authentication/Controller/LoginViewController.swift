@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.fillButtonStyle(button: signInBtnOutlet)
+        Utilities.borderButtonStyle(button: forgotPwOutlet)
 
        
     }

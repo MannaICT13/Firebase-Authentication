@@ -23,16 +23,20 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="05t-OI-koU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="SignIn"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SignIn">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="signInBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9cR-nQ-Let"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUM-1D-Uju">
                                         <rect key="frame" x="0.0" y="70" width="354" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="SignUp"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SignUp">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="signUpBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Umt-PK-FmX"/>
                                         </connections>
@@ -70,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gLf-Xr-LsA">
-                                <rect key="frame" x="30" y="74" width="354" height="244"/>
+                                <rect key="frame" x="30" y="74" width="354" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b2R-Cv-6Yh">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
@@ -87,16 +91,20 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nz-P1-pqn">
                                         <rect key="frame" x="0.0" y="140" width="354" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="SignIn"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SignIn">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="signInBtnAction:" destination="5Hi-2s-bLQ" eventType="touchUpInside" id="a9h-m3-8bU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l95-Ok-VpF">
-                                        <rect key="frame" x="0.0" y="210" width="354" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Forgot Password"/>
+                                        <rect key="frame" x="0.0" y="210" width="354" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Forgot Password">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="forgotPwBtnAction:" destination="5Hi-2s-bLQ" eventType="touchUpInside" id="LYp-Pc-eHg"/>
                                         </connections>
@@ -104,6 +112,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="xMG-As-vcG" firstAttribute="height" secondItem="5nz-P1-pqn" secondAttribute="height" id="5Po-aV-rEc"/>
+                                    <constraint firstItem="5nz-P1-pqn" firstAttribute="height" secondItem="l95-Ok-VpF" secondAttribute="height" id="JmF-Dy-47v"/>
                                     <constraint firstItem="b2R-Cv-6Yh" firstAttribute="height" secondItem="xMG-As-vcG" secondAttribute="height" id="fdG-U7-9Az"/>
                                 </constraints>
                             </stackView>
@@ -158,8 +167,10 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPQ-DT-GJ1">
                                         <rect key="frame" x="0.0" y="210" width="354" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="SignUp"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="SignUp">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="signUpBtnAction:" destination="zTk-TO-oj9" eventType="touchUpInside" id="dfl-6t-85a"/>
                                         </connections>
