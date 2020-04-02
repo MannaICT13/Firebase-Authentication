@@ -37,6 +37,24 @@ class DbHelper{
         
     }
     
+    func createSignIn(email: String,password:String){
+        
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            if let err = error{
+                
+                print("\(err.localizedDescription)")
+                return
+            }else{
+                print("Successfully login.......")
+            }
+        }
+        
+        
+        
+    }
+    
     
     
     

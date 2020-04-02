@@ -24,6 +24,18 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInBtnAction(_ sender: Any) {
+        
+        guard let email = emailTextField.text else {
+            return
+        }
+        
+        guard let pw = passwordTextField.text else {
+            return
+        }
+        
+        DbHelper.dbInstance.createSignIn(email: email, password: pw)
+        
+        
     }
     
     @IBAction func forgotPwBtnAction(_ sender: Any) {

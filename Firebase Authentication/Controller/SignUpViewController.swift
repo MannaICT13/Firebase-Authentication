@@ -41,6 +41,7 @@ class SignUpViewController: UIViewController {
         if pw1 != pw2{
             
             print("Password Not Matched!")
+            
         }else{
              DbHelper.dbInstance.createSignUp(email: email, password: pw1)
         }
