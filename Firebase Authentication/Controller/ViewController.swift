@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    
+    
+    @IBOutlet weak var signInBtOutlet: UIButton!
+    @IBOutlet weak var signUpBtnOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      
     }
 
-
+    @IBAction func signInBtnAction(_ sender: Any) {
+    }
+    
+    @IBAction func signUpBtnAction(_ sender: Any) {
+    }
 }
 
