@@ -19,7 +19,7 @@ class DbHelper{
     
     //for email link verification
     
-    private var authUser :User?{
+/*    private var authUser :User?{
         return Auth.auth().currentUser
     }
     
@@ -49,7 +49,7 @@ class DbHelper{
     
     
     
-    func createSignUp(email : String ,password : String){
+  func createSignUp(email : String ,password : String){
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             
@@ -70,6 +70,9 @@ class DbHelper{
         
         
     }
+
+  
+    
     
     func createSignIn(email: String,password:String){
         
@@ -98,6 +101,8 @@ class DbHelper{
         
     }
     
+
+    
     func ForgotPassword(email:String){
         
         Auth.auth().sendPasswordReset(withEmail: email) { (error) in
@@ -114,7 +119,7 @@ class DbHelper{
     
     
     
-    
+    */
     
     
     

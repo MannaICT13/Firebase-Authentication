@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -25,15 +27,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInBtnAction(_ sender: Any) {
         
-        guard let email = emailTextField.text else {
-            return
-        }
-        
-        guard let pw = passwordTextField.text else {
-            return
-        }
-        
-       DbHelper.dbInstance.createSignIn(email: email, password: pw)
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+
+        login(email: email, password: password)
         
         
         
@@ -41,7 +38,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotPwBtnAction(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Forgot PassWord!!", message: "You want reset password?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Forgot PassWord!!", message: "You want to reset password?", preferredStyle: .alert)
         alertController.addTextField { (emailTxt) in
             emailTxt.placeholder = "Enter your Email"
         }
@@ -51,8 +48,8 @@ class LoginViewController: UIViewController {
         let reset = UIAlertAction(title: "Reset", style: .default) { (resetAction) in
             
             guard let email = alertController.textFields![0].text else{return}
-            DbHelper.dbInstance.ForgotPassword(email: email)
-            
+            self.forgotPassword(email: email)
+            self.navigationController?.popViewController(animated: true)
             
             
         }
@@ -67,5 +64,84 @@ class LoginViewController: UIViewController {
 
 }
 
+
+extension LoginViewController {
+    
+    
+    
+    func login(email:String,password:String){
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            if let err = error{
+               // print("\(err.localizedDescription)")
+                self.alertDialouge(title: "Error Message!", msg: err.localizedDescription)
+                return
+                
+            }else{
+                if result != nil && !Auth.auth().currentUser!.isEmailVerified{
+                    
+                    //print("Already send verification code plseae check")
+                    self.alertDialouge(title: "Alert Message!", msg: "Already send verification code plseae check")
+                    
+                }else{
+                    
+                    
+                    let homeVC = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                }
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    func forgotPassword(email: String){
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            
+            if let err = error{
+                
+              //  print("\(err.localizedDescription)")
+                self.alertDialouge(title: "Error Message", msg: err.localizedDescription)
+                return
+            }else{
+                
+              //  print("Check your email")
+                self.alertDialouge(title: "Alert Message", msg: "Check your email")
+            }
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+}
+
+
+extension LoginViewController{
+    
+    
+    func alertDialouge(title: String,msg: String){
+        
+        
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(ok)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
+}
 
 
