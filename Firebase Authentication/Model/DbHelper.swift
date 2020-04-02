@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import Firebase
+
 class DbHelper{
     
     
@@ -16,10 +17,13 @@ class DbHelper{
     
     
     
+    //for email link verification
     
     private var authUser :User?{
         return Auth.auth().currentUser
     }
+    
+    
     
     func emailVerification(){
         
@@ -46,6 +50,7 @@ class DbHelper{
     
     
     func createSignUp(email : String ,password : String){
+        
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             
             if let err = error{
@@ -92,6 +97,20 @@ class DbHelper{
         
         
     }
+    
+    func ForgotPassword(email:String){
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            
+            if let err = error{
+                print("\(err.localizedDescription)")
+            }else{
+                print("Send email ......")
+            }
+            
+        }
+    }
+    
     
     
     

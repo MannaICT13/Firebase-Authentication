@@ -33,13 +33,39 @@ class LoginViewController: UIViewController {
             return
         }
         
-        DbHelper.dbInstance.createSignIn(email: email, password: pw)
+       DbHelper.dbInstance.createSignIn(email: email, password: pw)
+        
         
         
     }
     
     @IBAction func forgotPwBtnAction(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Forgot PassWord!!", message: "You want reset password?", preferredStyle: .alert)
+        alertController.addTextField { (emailTxt) in
+            emailTxt.placeholder = "Enter your Email"
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancel)
+        let reset = UIAlertAction(title: "Reset", style: .default) { (resetAction) in
+            
+            guard let email = alertController.textFields![0].text else{return}
+            DbHelper.dbInstance.ForgotPassword(email: email)
+            
+            
+            
+        }
+        alertController.addAction(reset)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+      
     }
+    
     
 
 }
+
+
+
