@@ -16,6 +16,35 @@ class DbHelper{
     
     
     
+    
+    private var authUser :User?{
+        return Auth.auth().currentUser
+    }
+    
+    func emailVerification(){
+        
+        if self.authUser != nil && !self.authUser!.isEmailVerified{
+            
+            self.authUser?.sendEmailVerification(completion: { (error) in
+                
+                if let err = error {
+                    print("\(err.localizedDescription)")
+                }else{
+                    print("Send Verification Code....")
+                }
+            })
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     func createSignUp(email : String ,password : String){
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             
@@ -24,7 +53,7 @@ class DbHelper{
             }
             else{
                 
-                print("Successfully created Auth")
+                self.emailVerification()
             }
             
             
@@ -47,7 +76,16 @@ class DbHelper{
                 print("\(err.localizedDescription)")
                 return
             }else{
-                print("Successfully login.......")
+               
+                if result != nil && !self.authUser!.isEmailVerified{
+                    
+                    print("Already send verification code plseae check")
+                    
+                }else{
+                    
+                    print("Successfully login....")
+                }
+               
             }
         }
         
